@@ -23,7 +23,7 @@ namespace Weinstore
             //lstPersons.ItemsSource = allPersons;
         }
 
-        async void OnSignUpButtonClicked(object sender, EventArgs e)
+        async void SignUpButtonClicked(object sender, EventArgs e)
         {
             var user = new User()
             {
@@ -43,12 +43,12 @@ namespace Weinstore
                 if (rootPage != null)
                 {
                     App.IsUserLoggedIn = true;
-                    //await Navigation.PopToRootAsync();
-                    await Navigation.PopModalAsync();
+                    await Navigation.PopToRootAsync();
+                    //await Navigation.PopModalAsync();
                     App.Current.MainPage = new MainPage();
                     //Navigation.InsertPageBefore(new MainPage(), Navigation.NavigationStack.First());
-
                 }
+
             }
             else
             {
