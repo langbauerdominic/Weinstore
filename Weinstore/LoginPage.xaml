@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinstore.LoginPage"
+             Title="Login"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <Color x:Key="WeinstoreColor">#125900</Color>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="30,40,30,30" Margin="0,50,0,0">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                        <Image  Source="WeinstoreLogoGreen" 
+                                WidthRequest="{OnPlatform iOS=60, Android=180}"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"/>
+                
+                        <Label Text="Weinstore"
+                               VerticalOptions="End"
+                               FontSize="32"
+                               TextColor="{StaticResource WeinstoreColor}"/>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Entry x:Name="usernameEntry"
+                               Placeholder="Benutzername"
+                               Margin="0,100,0,0"
+                               HeightRequest="43"
+                               BackgroundColor="White"
+                               TextColor="Black"/>
+
+                        <Entry x:Name="passwordEntry"
+                               Placeholder="Passwort"
+                               Margin="0,-6,0,0"
+                               HeightRequest="43"
+                               BackgroundColor="White"
+                               TextColor="Black"
+                               IsPassword="True"/>
+            
+                        <Button Text="Anmelden"
+                                BackgroundColor="{StaticResource WeinstoreColor}"
+                                TextColor="White"
+                                Margin="0,-6,0,0"
+                                Clicked="OnLoginButtonClicked"/>
+
+                        <!--<Label x:Name="messageLabel" /> -->
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
+                                <CheckBox Color="#125900"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Start"/>
+
+                                <Label Text="Angemeldet bleiben"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"/>
+                        </StackLayout>
+
+                        <Label Text="Passwort vergessen?"
+                               HorizontalOptions="Center"
+                               TextDecorations="Underline">
+                               <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Passwort_vergessen_tapped"/>
+                               </Label.GestureRecognizers>
+                        </Label>
+                        <StackLayout Orientation="Horizontal" Margin="0,60,0,0">
+                              <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" VerticalOptions="End" Margin="0,0,0,8"/>
+                            <Label Text="oder"
+                                   HorizontalOptions="Center"/>
+                             <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" VerticalOptions="End" Margin="0,0,0,8"/>
+                        </StackLayout>
+                        <Button Text="Registrieren"
+                                BackgroundColor="{StaticResource WeinstoreColor}"
+                                TextColor="White"
+                                Margin="0,10,0,0"
+                                Clicked="OnSignUpButtonClicked"/>
+                    </StackLayout>
+                </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,7 +1,137 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Weinstore.MainPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-    </StackLayout>
-</ContentPage>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:Weinstore;assembly=Weinstore"
+            x:Class="Weinstore.MainPage"
+            SelectedTabColor="#125900"
+            BarBackgroundColor="White"
+            UnselectedTabColor="LightGray">
+
+    <local:HomePage/>
+	<NavigationPage Title="Suche" IconImageSource="baseline_search_black_48pt_3x">
+		<x:Arguments>
+			<local:SearchPage/>
+		</x:Arguments>
+	</NavigationPage>
+	<local:FavoritePage/>
+    <local:NewsPage/>
+    <local:ShoppingCartPage/>
+</TabbedPage>
+
+<!--
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d"
+
+            x:Class="Weinstore.MainPage"
+            BarBackgroundColor="White"
+            SelectedTabColor="#125900">
+
+ <TabbedPage.Resources>
+        <Color x:Key="WeinstoreColor">#125900</Color>
+    </TabbedPage.Resources>
+
+    <ContentPage Title="Startseite" IconImageSource="baseline_home_black_48pt_3x.png">
+        <ContentPage.Content>
+            
+            <StackLayout Margin="0,40,0,0" HorizontalOptions="Start" VerticalOptions="Start" BackgroundColor="White">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                    <Label Text="Weinstore" HorizontalOptions="Start" FontSize="Title" Padding="20,0,0,0" TextColor="{StaticResource WeinstoreColor}" />
+                    <Image Source="baseline_search_black_48pt_3x" HorizontalOptions="End" Margin="170,0,0,0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SearchBtn_Clicked"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </StackLayout>
+            </StackLayout>
+            </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="Suche" IconImageSource="baseline_search_black_48pt_3x.png" BackgroundColor="Transparent">
+        <ContentPage.Content>
+            <StackLayout Margin="0,40,0,0">
+                <SearchBar Placeholder="Suche" BackgroundColor="White" />
+
+                <ListView x:Name="GroupedView"
+                          GroupDisplayBinding="{Binding Title}"
+                          RowHeight="75"
+                          GroupShortNameBinding="{Binding ShortName}"
+                          IsGroupingEnabled="True"
+                          BackgroundColor="White"
+                          >
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell Text="{Binding Name}"
+                                       Detail="{Binding Description}"
+                                       ImageSource="{Binding Icon}"
+                                       Height="75"
+                                       TextColor="Black"
+                                       />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="5,5,5,5" BackgroundColor="White">
+                                    <Button ImageSource="{Binding StateIcon}"
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent"
+                                            BorderWidth="0"
+                                            Clicked="HeaderTapped"
+                                            CommandParameter="{Binding .}"
+                                            WidthRequest="30"/>
+
+                                    <Label Text="{Binding TitleWithItemCount}"
+                                           TextColor="{StaticResource WeinstoreColor}"
+                                           FontSize="20"
+                                           FontAttributes="Bold"
+                                           VerticalOptions="Center"
+                                           BackgroundColor="White"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.GroupHeaderTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+-->
+    <!--<ContentPage Title="Favoriten" IconImageSource="baseline_favorite_border_black_48pt_3x.png">-->
+        <!--
+        Na
+        <ContentPage.Content> 
+            <StackLayout Margin="0,40,0,0" HorizontalOptions="Start" VerticalOptions="Start" BackgroundColor="White">
+              <Label Text="Favoriten" FontSize="Title" Padding="20,0,0,0" TextColor="{StaticResource WeinstoreColor}" />
+                <ListView>
+
+                </ListView>
+            </StackLayout>
+            </ContentPage.Content>-->
+    <!--</ContentPage>-->
+<!--
+    <ContentPage Title="Nachrichten" IconImageSource="baseline_search_black_48pt_3x">
+        <ContentPage.Content>
+            <StackLayout Margin="0,40,0,0" HorizontalOptions="Start" VerticalOptions="Start" BackgroundColor="White">
+              <Label Text="Benachrichtigungen" FontSize="Title" Padding="20,0,0,0" TextColor="{StaticResource WeinstoreColor}" />
+                <ListView>
+
+                </ListView>
+            </StackLayout>
+            </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="Warenkorb" IconImageSource="baseline_shopping_cart_black_48pt_3x.png">
+        <ContentPage.Content>
+            <StackLayout Margin="0,40,0,0" HorizontalOptions="Start" VerticalOptions="Start" BackgroundColor="White">
+              <Label Text="Warenkorb" FontSize="Title" Padding="20,0,0,0" TextColor="{StaticResource WeinstoreColor}" />
+                <ListView>
+
+                </ListView>
+            </StackLayout>
+            </ContentPage.Content>
+    </ContentPage>
+</TabbedPage> -->

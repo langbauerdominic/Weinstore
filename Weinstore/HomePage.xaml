@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinstore.HomePage"
+             IconImageSource="baseline_home_black_48pt_3x"
+             Title="Startseite">
+
+    <ContentPage.Resources>
+        <Color x:Key="WeinstoreColor">#125900</Color>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20,40,20,0">
+            <Button Text="Ausloggen"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Clicked="OnLogoutButtonClicked"/>
+
+            <Button Text="Profil löschen"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Clicked="OnDeleteButtonClicked"/>
+
+			<Label Text="Weinstore"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Start" Padding="0,20,0,0"
+                    FontSize="Title"
+                    TextColor="{StaticResource WeinstoreColor}"/>
+           
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

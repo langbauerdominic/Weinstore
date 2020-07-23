@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinstore.ShoppingCartPage"
+             IconImageSource="baseline_shopping_cart_black_48pt_3x"
+             Title="Warenkorb">
+
+    <ContentPage.Resources>
+        <Color x:Key="WeinstoreColor">#125900</Color>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20,40,20,0">
+			<Label Text="Warenkorb" HorizontalOptions="StartAndExpand" VerticalOptions="Start" Padding="0,20,0,0" FontSize="Title" TextColor="{StaticResource WeinstoreColor}"/>
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

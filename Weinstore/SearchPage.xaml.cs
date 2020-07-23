@@ -8,34 +8,12 @@ using Xamarin.Forms;
 
 namespace Weinstore
 {
-    public partial class MainPage : TabbedPage
-    {
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-    }
-}
-
-
-/*
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-
-
-namespace Weinstore
-{
-    public partial class MainPage : TabbedPage
+    public partial class SearchPage : ContentPage
     {
         private ObservableCollection<WineriesGroup> _allGroups;
         private ObservableCollection<WineriesGroup> _expandedGroups;
 
-        public MainPage()
+        public SearchPage()
         {
             InitializeComponent();
             _allGroups = WineriesGroup.All;
@@ -79,7 +57,9 @@ namespace Weinstore
             await Application.Current.MainPage.Navigation.PushAsync(new SearchPage());
         }
 
-
+        async void OnUpcomingAppointmentsButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SearchClickedPage());
+        }
     }
 }
-*/

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinstore.SearchPage"
+			 Title="Suche">
+
+    <ContentPage.Resources>
+        <Color x:Key="WeinstoreColor">#125900</Color>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+		<StackLayout>
+			<SearchBar Placeholder="Suche" BackgroundColor="White" />
+
+            <ListView x:Name="GroupedView"
+                        GroupDisplayBinding="{Binding Title}"
+                        RowHeight="75"
+                        GroupShortNameBinding="{Binding ShortName}"
+                        IsGroupingEnabled="True"
+                        BackgroundColor="White">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding Name}"
+                                    Detail="{Binding Description}"
+                                    ImageSource="{Binding Icon}"
+                                    Height="75"
+                                    TextColor="Black"
+                                    />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5,5,5,5" BackgroundColor="White">
+                                <Button ImageSource="{Binding StateIcon}"
+                                        BackgroundColor="Transparent"
+                                        BorderColor="Transparent"
+                                        BorderWidth="0"
+                                        Clicked="HeaderTapped"
+                                        CommandParameter="{Binding .}"
+                                        WidthRequest="30"/>
+
+                                <Label Text="{Binding TitleWithItemCount}"
+                                        TextColor="{StaticResource WeinstoreColor}"
+                                        FontSize="20"
+                                        FontAttributes="Bold"
+                                        VerticalOptions="Center"
+                                        BackgroundColor="White"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+            </ListView>
+		</StackLayout>
+	</ContentPage.Content>
+
+</ContentPage>
